@@ -1,0 +1,335 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Brian Maweu - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: powderblue; /* Use a light gray background for better readability */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+        
+        header {
+            background-color: powderblue; /* Use a blue header background */
+            padding: 20px;
+            color: #fff;
+            text-align: center; /* Center-align header text */
+        }
+        
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+        }
+        
+        .profile h1 {
+            font-family: 'Georgia', serif;
+            margin: 0; /* Remove margin to align text with the profile image */
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: palegreen;
+            text-align: center; /* Center-align the navigation menu */
+        }
+        
+        nav ul li {
+            display: inline-block; /* Display menu items horizontally */
+            padding: 10px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-family: 'Georgia', serif;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        .column {
+            width: 80%; 
+            max-width: 800px; 
+            margin: 20px auto; 
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        
+       
+        .column:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .column h2 {
+            color: #3498db;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .column p {
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .contact-form {
+            text-align: center; 
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+        
+        .contact-form button {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* Style the success alert */
+        .custom-alert {
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid;
+            border-radius: 4px;
+          }
+        
+          .alert-success {
+            background-color: #4CAF50;
+            color: white;
+          }
+        
+          .alert-info {
+            background-color: #2196F3;
+            color: white;
+          }
+                
+          .alert-warning { background-color: #ff9800; color: white; } .alert-error { background-color: #f44336; color: white; } .closebtn { margin-left: 15px; color: black; font-weight: bold; float: right; font-size: 22px; cursor: pointer; }
+            
+/* Styling for the "Rate Me" section */
+#rateMe {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Reduce the width */
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+        }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            cursor: pointer;
+            width: 30px; /* Adjust the size of the stars */
+            height: 30px;
+            background-color: brown; /* Brown color */
+            clip-path: polygon(50% 0%, 61.8% 38.2%, 95.1% 31.8%, 70.9% 61.8%, 81.2% 95.1%, 50% 78.2%, 18.8% 95.1%, 29.1% 61.8%, 5% 31.8%, 38.2% 38.2%);
+            display: inline-block;
+            margin: 0;
+        }
+
+        .star-rating input[type="radio"]:checked + label {
+            background-color: black; /* Change the color to black when selected */
+        }
+
+        .star-button {
+            background-color: brown;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+
+            </style>
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <div class="left-align-image">
+                <img src="{% static 'C:\Users\OBED\Desktop\port\app\static\brayo.jpg' %}"  alt="Profile Picture">
+            </div>
+           <b> <h1 style="font-family: 'Algerian', Algerian;"><font color="black"> Brian Maweu</font></h1>
+        </div>
+    </header>
+
+    <div class="menu-toggle">
+        <button id="navToggle">Menu</button>
+    </div>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#support">Support Me</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="about" class="column info-slide">
+            <h2 style="font-family: 'Times New Roman', serif;">About Me</h2>
+            <p>Hey ☺️😝😝😝 <br>
+            I'm Maweu Brian, and my journey in the realm of technology started in the enchanting town of Makindu. 🏞️ I'm a passionate IT student 🎓👨‍💻 currently on an academic quest at Khu university, where I'm expanding my horizons in the IT world.
+            My excitement knows no bounds as I anticipate the prospect of collaborating with industry giants like Microsoft and Safaricom. Join me on this exhilarating tech voyage! 🚀💼🌟</p>
+        </section>
+
+        <section id="portfolio" class="column info-slide">
+            <h2 style="font-family: 'Verdana', sans-serif;">Portfolio</h2>
+            <p>Here, I showcase my work in web development, including projects that demonstrate my skills in front-end and back-end technologies. My portfolio reflects my commitment to delivering high-quality solutions to my clients. Feel free to browse through my projects and explore the world of web development.</p>
+            <!-- Include your project details here -->
+        </section>
+
+        <section id="contact" class="column info-slide">
+            <h2 style="font-family: 'Arial Black', sans-serif;">Contact Me</h2>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/mzblonkg" method="POST">
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <!-- Email Field -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <!-- Message Field -->
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <!-- Submit Button -->
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+<section id="support" class="column info-slide">
+            <h2>Support Me</h2>
+            <div class="support-container">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <label for="phone_number">Phone Number:</label>
+                    <input type="text" id="phone_number" name="phone_number" required>
+                    <br>
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount" required>
+                    <br>
+                    <input type="submit" value="Initiate Payment">
+                </form>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+   
+        
+        </div>
+    </section>
+    <section id="rateMe" class="column info-slide">
+        <h1>Rate Me</h1>
+        <!-- Add a form element with an action attribute -->
+        <form method="post" action="{% url 'index' %}">
+          {% csrf_token %}
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for "star2"></label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1"></label>
+            </div>
+
+            <button type="submit" class="star-button" id="submitBtn">Rate Me</button>
+            {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+        </form>
+
+       
+    </section>
+    <div class="contact-info">
+                <p>If you'd like to get in touch, you can reach me through the following channels:</p>
+                <ul>
+                    <li>Email: <a href="mailto:papercoding1@gmail.com">papercoding1@gmail.com</a></li>
+                    <li>Phone: <a href="https://wa.me/0728469853">0728469853 (WhatsApp available)</a></li>
+                    <li>Facebook: <a href="https://www.facebook.com/profile.php?id=100075968870542">Your Facebook Page</a></li>
+                    <li>Github: <a href="https://github.com/YourGitHubProfile">Your GitHub Profile</a></li>
+                    <li>Twitter: <a href="https://twitter.com/YourTwitterHandle">Your Twitter Handle</a></li>
+                </ul>
+            </div>
+
+    <footer>
+        <p><font color="black">&copy; 2023 Brian Maweu</font></p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navToggle = document.getElementById("navToggle");
+            const mainNav = document.getElementById("mainNav");
+
+            navToggle.addEventListener("click", function () {
+                if (mainNav.style.display === "block") {
+                    mainNav.style.display = "none";
+                } else {
+                    mainNav.style.display = "block";
+                }
+            });
+        });
+        function submitForm() {
+      
+        document.getElementById("successAlert").style.display = "block";
+    }
+
+    document.getElementById("payButton").addEventListener("click", function() {
+        
+        setTimeout(function() {
+            window.location = "#support";
+        }, 2000); 
+    });
+     function closeMessage() {
+        var successMessage = document.getElementById("successMessage");
+        successMessage.style.display="none";
+     }
+</script>
+</body>
+</html>
